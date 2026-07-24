@@ -1,0 +1,11 @@
+# Strip notebook outputs and execution counts before every commit so the
+# repo stays free of bulky, noisy cell output.
+#
+# One-time setup after cloning:
+#   pip install pre-commit
+#   pre-commit install
+repos:
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.7.1
+    hooks:
+      - id: nbstripout
