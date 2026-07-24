@@ -1,0 +1,15 @@
+# ANUGA simulation output
+*.sww
+*.msh
+
+# Generated animation frames
+notebooks/_plot/
+
+# nbconvert artifacts from test_notebooks.sh / create_html.sh
+*.nbconvert.ipynb
+*.nbconvert.html
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/

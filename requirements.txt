@@ -19,16 +19,14 @@
 # utm
 # nbsphinx
 
+anuga >= 3.2
 cython >= 0.29
 dill >= 0.3
-future >= 0.18
 gitpython >= 3.1
 matplotlib >= 3.5
-meshpy >= 2020.1
 nbsphinx >= 0.8
 netcdf4 >= 1.5
 numpy >= 1.21
-Pmw >=  2.0.1
 pymetis >=  2020.1
 pytest >= 7.1.2
 pytz >= 2022.1
