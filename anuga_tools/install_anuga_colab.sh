@@ -37,7 +37,12 @@ echo "   Install utm via pip"
 pip -q install utm > /dev/null 2>&1
 
 echo "   Install anuga via pip"
-pip -q install anuga > /dev/null 2>&1
+# Pinned: the anuga 3.3.8 linux wheels on PyPI were built with -march=native on
+# an AVX-512 machine (readelf reports "x86 ISA used: ... x86-64-v4"), so
+# "import anuga" dies with SIGILL (Illegal instruction, core dumped) on Colab
+# VMs, whose CPUs have no AVX-512. 3.3.7 needs only x86-64-v3 (AVX2), which
+# Colab has. Drop the pin once a release with portable wheels is on PyPI.
+pip -q install anuga==3.3.7 > /dev/null 2>&1
 
 # echo "   Install meson-python via pip"
 # pip -q install meson-python > /dev/null 2>&1 
