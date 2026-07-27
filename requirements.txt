@@ -19,16 +19,19 @@
 # utm
 # nbsphinx
 
+# Pinned to match anuga_tools/install_anuga_colab.sh: the cp312 and cp314 linux
+# wheels of anuga 3.3.8 on PyPI were built with -march=native on an AVX-512
+# machine, so "import anuga" dies with SIGILL on CPUs without AVX-512 (Colab,
+# and some GitHub runners). 3.3.7 needs only x86-64-v3 (AVX2) on every
+# interpreter. Drop the pin once a release with portable wheels is on PyPI.
+anuga == 3.3.7
 cython >= 0.29
 dill >= 0.3
-future >= 0.18
 gitpython >= 3.1
 matplotlib >= 3.5
-meshpy >= 2020.1
 nbsphinx >= 0.8
 netcdf4 >= 1.5
 numpy >= 1.21
-Pmw >=  2.0.1
 pymetis >=  2020.1
 pytest >= 7.1.2
 pytz >= 2022.1
